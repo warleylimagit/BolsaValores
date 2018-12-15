@@ -13,19 +13,19 @@ public class AcaoServiceImpl implements AcaoService {
 	}
 
 	@Override
-	public Acao getGarageById(String id) {
+	public Acao getAcaoById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Acao createNewGarage(Acao garage) {
+	public Acao createNewAcao(Acao garage) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Acao saveGarage(String id, Acao garage) {
+	public Acao saveAcao(String id, Acao garage) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -8,9 +8,9 @@ public interface EmpresaService {
 
 	Set<Empresa> getAll();
 	
-	Empresa getGarageById(String id);
+	Empresa getEmpresaById(String id);
 
-	Empresa createNewGarage(Empresa garage);
+	Empresa createNewEmpresa(Empresa garage);
 
-	Empresa saveGarage(String id, Empresa garage);
+	Empresa saveEmpresa(String id, Empresa garage);
 }

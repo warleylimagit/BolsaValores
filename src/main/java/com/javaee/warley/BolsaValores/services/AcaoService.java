@@ -8,9 +8,9 @@ public interface AcaoService {
 	
 	Set<Acao> getAll();
 	
-	Acao getGarageById(String id);
+	Acao getAcaoById(String id);
 
-	Acao createNewGarage(Acao garage);
+	Acao createNewAcao(Acao garage);
 
-	Acao saveGarage(String id, Acao garage);
+	Acao saveAcao(String id, Acao garage);
 }

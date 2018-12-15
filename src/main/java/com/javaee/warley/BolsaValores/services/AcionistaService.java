@@ -8,9 +8,9 @@ public interface AcionistaService {
 	
 	Set<Acionista> getAll();
 	
-	Acionista getGarageById(String id);
+	Acionista getAcionistaById(String id);
 
-	Acionista createNewGarage(Acionista garage);
+	Acionista createNewAcionista(Acionista garage);
 
-	Acionista saveGarage(String id, Acionista garage);
+	Acionista saveAcionista(String id, Acionista garage);
 }

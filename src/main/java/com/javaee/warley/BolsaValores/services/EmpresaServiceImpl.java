@@ -13,19 +13,19 @@ public class EmpresaServiceImpl implements EmpresaService {
 	}
 
 	@Override
-	public Empresa getGarageById(String id) {
+	public Empresa getEmpresaById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Empresa createNewGarage(Empresa garage) {
+	public Empresa createNewEmpresa(Empresa garage) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Empresa saveGarage(String id, Empresa garage) {
+	public Empresa saveEmpresa(String id, Empresa garage) {
 		// TODO Auto-generated method stub
 		return null;
 	}

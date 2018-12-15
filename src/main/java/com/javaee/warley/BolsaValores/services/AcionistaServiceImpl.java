@@ -13,19 +13,19 @@ public class AcionistaServiceImpl implements AcionistaService {
 	}
 
 	@Override
-	public Acionista getGarageById(String id) {
+	public Acionista getAcionistaById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Acionista createNewGarage(Acionista garage) {
+	public Acionista createNewAcionista(Acionista garage) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Acionista saveGarage(String id, Acionista garage) {
+	public Acionista saveAcionista(String id, Acionista garage) {
 		// TODO Auto-generated method stub
 		return null;
 	}
