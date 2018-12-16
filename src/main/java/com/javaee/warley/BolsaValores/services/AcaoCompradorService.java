@@ -6,7 +6,7 @@ public interface AcaoCompradorService {
 	
 	Acao_Comprador getAcaoCompradorById(String id);
 
-	Acao_Comprador createNewAcaoComprador(Acao_Comprador garage);
+	Acao_Comprador createNewAcaoComprador(Acao_Comprador acaoComprador);
 
-	Acao_Comprador saveAcaoComprador(String id, Acao_Comprador garage);
+	Acao_Comprador saveAcaoComprador(String id, Acao_Comprador acaoComprador);
 }

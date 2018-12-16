@@ -10,7 +10,7 @@ public interface AcaoService {
 	
 	Acao getAcaoById(String id);
 
-	Acao createNewAcao(Acao garage);
+	Acao createNewAcao(Acao acao);
 
-	Acao saveAcao(String id, Acao garage);
+	Acao saveAcao(String id, Acao acao);
 }

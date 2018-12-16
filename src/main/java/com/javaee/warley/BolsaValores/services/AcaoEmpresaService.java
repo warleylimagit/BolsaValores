@@ -6,7 +6,7 @@ public interface AcaoEmpresaService {
 	
 	Acao_Empresa getAcaoEmpresaById(String id);
 
-	Acao_Empresa createNewAcaoEmpresa(Acao_Empresa garage);
+	Acao_Empresa createNewAcaoEmpresa(Acao_Empresa acaoEmpresa);
 
-	Acao_Empresa saveAcaoEmpresa(String id, Acao_Empresa garage);
+	Acao_Empresa saveAcaoEmpresa(String id, Acao_Empresa acaoEmpresa);
 }
