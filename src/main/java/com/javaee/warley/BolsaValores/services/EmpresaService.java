@@ -10,7 +10,7 @@ public interface EmpresaService {
 	
 	Empresa getEmpresaById(String id);
 
-	Empresa createNewEmpresa(Empresa garage);
+	Empresa createNewEmpresa(Empresa empresa);
 
-	Empresa saveEmpresa(String id, Empresa garage);
+	Empresa saveEmpresa(String id, Empresa empresa);
 }
