@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.javaee.warley.BolsaValores.domain.Acao_Empresa;
+import com.javaee.warley.BolsaValores.domain.Empresa;
 import com.javaee.warley.BolsaValores.repositories.AcaoEmpresaRepository;
 
 public class AcaoEmpresaServiceImpl implements AcaoEmpresaService {
@@ -28,6 +29,16 @@ public class AcaoEmpresaServiceImpl implements AcaoEmpresaService {
 	public Acao_Empresa getAcaoEmpresaById(String id) {
 		// TODO Auto-generated method stub
 		return GetById(id);
+	}
+	
+	@Override
+	public Acao_Empresa getAcaoEmpresaByIdEmpresa(Empresa empresa) {
+		Optional<Acao_Empresa> acaoEmpresa = acaoEmpresaRepository.fingByEmpresa(empresa.getEmpresa());
+		
+		if(!acaoEmpresa.isPresent())
+			throw new IllegalArgumentException("Nenhum item foi encontrado!");
+		
+		return acaoEmpresa.get();
 	}
 
 	@Override
