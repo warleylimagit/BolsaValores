@@ -4,13 +4,17 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.javaee.warley.BolsaValores.domain.Acionista;
 import com.javaee.warley.BolsaValores.repositories.AcionistaRepository;
 
+@Service
 public class AcionistaServiceImpl implements AcionistaService {
+	@Autowired
 	private AcionistaRepository acionistaRepository;
 	
 	public AcionistaServiceImpl(AcionistaRepository acionistaRepository) {
@@ -41,18 +45,19 @@ public class AcionistaServiceImpl implements AcionistaService {
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public Acionista createNewAcionista(Acionista acionista) {
-		if(acionistaRepository.findByAcionista(acionista.getNome()).isEmpty()) {			
-			return acionistaRepository.save(acionista);
+	public Acionista createNewAcionista(Acionista _acionista) {
+		if(acionistaRepository.findByAcionista(_acionista.getNome()).isEmpty()) {			
+			return acionistaRepository.save(_acionista);
 		}
 		
 		throw new IllegalArgumentException("Ja existe um acionista com este nome!");
 	}
 
 	@Override
-	public Acionista saveAcionista(String id, Acionista acionista) {
-		acionista.setId(id);
-		return acionistaRepository.save(acionista);
+	@Transactional(propagation=Propagation.REQUIRED)
+	public Acionista saveAcionista(String id, Acionista _acionista) {
+		_acionista.setId(id);
+		return acionistaRepository.save(_acionista);
 	}
 
 }

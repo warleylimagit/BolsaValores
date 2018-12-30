@@ -2,12 +2,14 @@ package com.javaee.warley.BolsaValores.services;
 
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.javaee.warley.BolsaValores.domain.Acao_Comprador;
 import com.javaee.warley.BolsaValores.repositories.AcaoCompradorRepository;
 
+@Service
 public class AcaoCompradorServiceImpl implements AcaoCompradorService {
 	private AcaoCompradorRepository acaoCompradorRepository;
 	
@@ -40,6 +42,7 @@ public class AcaoCompradorServiceImpl implements AcaoCompradorService {
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public Acao_Comprador saveAcaoComprador(String id, Acao_Comprador acaoComprador) {
 		acaoComprador.setId(id);
 		return acaoCompradorRepository.save(acaoComprador);

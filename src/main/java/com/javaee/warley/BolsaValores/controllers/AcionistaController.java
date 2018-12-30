@@ -15,7 +15,7 @@ import com.javaee.warley.BolsaValores.domain.Acionista;
 import com.javaee.warley.BolsaValores.services.AcionistaService;
 
 @RestController
-@RequestMapping(AcaoCompradorController.BASE_URL)
+@RequestMapping(AcionistaController.BASE_URL)
 public class AcionistaController {
 
 	public static final String BASE_URL = "/api/v1/acionista";
@@ -40,7 +40,7 @@ public class AcionistaController {
     
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Acionista create(@RequestBody Acionista acionista){
-        return acionistaService.createNewAcionista(acionista);
+    public Acionista create(@RequestBody Acionista _acionista){
+        return acionistaService.createNewAcionista(_acionista);
     }
 }

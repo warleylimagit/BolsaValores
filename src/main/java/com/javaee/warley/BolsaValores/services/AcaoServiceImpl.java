@@ -4,12 +4,14 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.javaee.warley.BolsaValores.domain.Acao;
 import com.javaee.warley.BolsaValores.repositories.AcaoRepository;
 
+@Service
 public class AcaoServiceImpl implements AcaoService {
 	private AcaoRepository acaoRepository;
 	
@@ -50,6 +52,7 @@ public class AcaoServiceImpl implements AcaoService {
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public Acao saveAcao(String id, Acao acao) {
 		acao.setId(id);
 		return acaoRepository.save(acao);

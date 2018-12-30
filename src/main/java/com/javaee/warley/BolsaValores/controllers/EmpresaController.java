@@ -16,7 +16,7 @@ import com.javaee.warley.BolsaValores.domain.Empresa;
 import com.javaee.warley.BolsaValores.services.EmpresaService;
 
 @RestController
-@RequestMapping(AcaoCompradorController.BASE_URL)
+@RequestMapping(EmpresaController.BASE_URL)
 public class EmpresaController {
 
 	public static final String BASE_URL = "/api/v1/empresa";

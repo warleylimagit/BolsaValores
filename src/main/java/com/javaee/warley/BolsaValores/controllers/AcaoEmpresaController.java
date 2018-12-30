@@ -16,7 +16,7 @@ import com.javaee.warley.BolsaValores.services.AcaoEmpresaService;
 import com.javaee.warley.BolsaValores.services.EmpresaService;
 
 @RestController
-@RequestMapping(AcaoCompradorController.BASE_URL)
+@RequestMapping(AcaoEmpresaController.BASE_URL)
 public class AcaoEmpresaController {
 
 	public static final String BASE_URL = "/api/v1/acaoEmpresa";

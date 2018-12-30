@@ -10,7 +10,7 @@ public interface AcionistaService {
 	
 	Acionista getAcionistaById(String id);
 
-	Acionista createNewAcionista(Acionista acionista);
+	Acionista createNewAcionista(Acionista _acionista);
 
-	Acionista saveAcionista(String id, Acionista acionista);
+	Acionista saveAcionista(String id, Acionista _acionista);
 }

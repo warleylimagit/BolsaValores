@@ -2,6 +2,7 @@ package com.javaee.warley.BolsaValores.services;
 
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -9,6 +10,7 @@ import com.javaee.warley.BolsaValores.domain.Acao_Empresa;
 import com.javaee.warley.BolsaValores.domain.Empresa;
 import com.javaee.warley.BolsaValores.repositories.AcaoEmpresaRepository;
 
+@Service
 public class AcaoEmpresaServiceImpl implements AcaoEmpresaService {
 	private AcaoEmpresaRepository acaoEmpresaRepository;
 	
@@ -33,7 +35,7 @@ public class AcaoEmpresaServiceImpl implements AcaoEmpresaService {
 	
 	@Override
 	public Acao_Empresa getAcaoEmpresaByIdEmpresa(Empresa empresa) {
-		Optional<Acao_Empresa> acaoEmpresa = acaoEmpresaRepository.fingByEmpresa(empresa.getEmpresa());
+		Optional<Acao_Empresa> acaoEmpresa = acaoEmpresaRepository.findByEmpresa(empresa.getEmpresa());
 		
 		if(!acaoEmpresa.isPresent())
 			throw new IllegalArgumentException("Nenhum item foi encontrado!");
@@ -48,6 +50,7 @@ public class AcaoEmpresaServiceImpl implements AcaoEmpresaService {
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public Acao_Empresa saveAcaoEmpresa(String id, Acao_Empresa acaoEmpresa) {
 		acaoEmpresa.setId(id);
 		return acaoEmpresaRepository.save(acaoEmpresa);

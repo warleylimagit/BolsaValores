@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +13,7 @@ import com.javaee.warley.BolsaValores.domain.Empresa;
 import com.javaee.warley.BolsaValores.repositories.AcaoEmpresaRepository;
 import com.javaee.warley.BolsaValores.repositories.EmpresaRepository;
 
+@Service
 public class EmpresaServiceImpl implements EmpresaService {
 	private EmpresaRepository empresaRepository;
 	private AcaoEmpresaRepository acaoEmpresaRepository;
@@ -48,7 +50,7 @@ public class EmpresaServiceImpl implements EmpresaService {
 		if(!empresaRepository.findByEmpresa(empresa.getEmpresa()).isEmpty())
 			throw new IllegalArgumentException("Ja existe uma empresa com este nome!");
 		
-		Optional<Acao_Empresa> empresaBanco = acaoEmpresaRepository.fingByEmpresa(empresa.getEmpresa());
+		Optional<Acao_Empresa> empresaBanco = acaoEmpresaRepository.findByEmpresa(empresa.getEmpresa());
 		if(empresaBanco.get().getQuantidade_atual_acoes() == empresaBanco.get().getLimite_acoes())
 			throw new IllegalArgumentException("A empresa ja atingiu o limite maximo de acoes!");
 		
@@ -59,6 +61,7 @@ public class EmpresaServiceImpl implements EmpresaService {
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public Empresa saveEmpresa(String id, Empresa empresa) {
 		empresa.setId(id);
 		return empresaRepository.save(empresa);
